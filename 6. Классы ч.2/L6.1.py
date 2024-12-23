@@ -2,15 +2,13 @@ class UserAccount():
     def __init__(self,username, email, password):
         self.username = username
         self.email = email
-        self.password = password
+        self.__password = password
 
     def set_password(self, new_password):
-        self.new_password = new_password
-        self.password = self.new_password
+        self.__password = new_password
 
     def chek_password(self, test):
-        self.test = test
-        if self.test == self.password:
+        if test == self.__password:
             return True
         else: return False
 obj = UserAccount('Mischa', 'mmm', 'poiuy')
